@@ -2,10 +2,11 @@
 builder = "nixpacks"
 
 [deploy]
-startCommand = "npm start"
+startCommand = "cd server && npm start"
 healthcheckPath = "/api/health"
 healthcheckTimeout = 300
 restartPolicyType = "on_failure"
 
 [deploy.envs]
-NODE_ENV = "production" 
+NODE_ENV = "production"
+PORT = "5000" 
