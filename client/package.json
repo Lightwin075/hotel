@@ -1,6 +1,7 @@
 {
   "name": "hotel-management-client",
   "version": "1.0.0",
+  "type": "module",
   "description": "Frontend for Hotel Management System",
   "private": true,
   "dependencies": {
