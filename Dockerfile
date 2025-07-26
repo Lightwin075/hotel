@@ -9,9 +9,10 @@ COPY package*.json ./
 COPY server/package*.json ./server/
 COPY client/package*.json ./client/
 
-# Install dependencies
-RUN chmod +x install.sh
-RUN ./install.sh
+# Install dependencies directly
+RUN npm install
+RUN cd server && npm install && cd ..
+RUN cd client && npm install && cd ..
 
 # Copy source code
 COPY . .
@@ -27,4 +28,4 @@ RUN cp -r client/dist/* server/public/
 EXPOSE 5000
 
 # Start server
-CMD ["cd", "server", "&&", "npm", "start"] 
+CMD ["sh", "-c", "cd server && npm start"] 
