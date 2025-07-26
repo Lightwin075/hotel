@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { X, Home, Bed, Calendar, Users, CreditCard, Sparkles, UserCheck, BarChart3, Settings } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
-import { User } from '../types';
 
 interface SidebarProps {
   open: boolean;
