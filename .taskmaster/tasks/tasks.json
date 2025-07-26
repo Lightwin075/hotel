@@ -1,0 +1,208 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": "1",
+        "title": "Project Setup and Environment Configuration",
+        "description": "Set up the development environment and project structure for the hotel management system",
+        "details": "Initialize the project with React frontend, Node.js backend, and PostgreSQL database. Set up development tools, linting, and basic project structure.",
+        "testStrategy": "Verify all development tools are working, database connection is established, and basic project structure is in place",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [],
+        "subtasks": []
+      },
+      {
+        "id": "2",
+        "title": "Database Schema Design and Implementation",
+        "description": "Design and implement the core database schema for the hotel management system",
+        "details": "Create database tables for users, rooms, reservations, guests, billing, and housekeeping. Implement proper relationships and constraints. Include soft delete fields (deleted_at, deleted_by) and audit fields (created_at, updated_at, created_by, updated_by) for all entities.",
+        "testStrategy": "Test all database operations, verify relationships work correctly, and ensure data integrity constraints are enforced",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [
+          "1"
+        ],
+        "subtasks": []
+      },
+      {
+        "id": "3",
+        "title": "User Authentication and Authorization System",
+        "description": "Implement secure user authentication and role-based authorization for staff and guests",
+        "details": "Create JWT-based authentication system with user registration, login, logout, and role-based access control for different user types.",
+        "testStrategy": "Test all authentication flows, verify JWT tokens work correctly, and ensure proper authorization for different user roles",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [
+          "2"
+        ],
+        "subtasks": []
+      },
+      {
+        "id": "4",
+        "title": "Room Management System",
+        "description": "Create the core room management functionality for tracking room inventory and status",
+        "details": "Implement CRUD operations for rooms, room types, pricing, and status management (available, occupied, maintenance, cleaning).",
+        "testStrategy": "Test all room operations, verify status updates work correctly, and ensure proper validation of room data",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [
+          "2",
+          "3"
+        ],
+        "subtasks": []
+      },
+      {
+        "id": "5",
+        "title": "Basic Reservation System",
+        "description": "Implement core booking functionality for room reservations",
+        "details": "Create reservation creation, modification, and cancellation features. Implement availability checking and date validation.",
+        "testStrategy": "Test booking creation, modification, cancellation, and verify availability calculations work correctly",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [
+          "4"
+        ],
+        "subtasks": []
+      },
+      {
+        "id": "6",
+        "title": "Guest Management System",
+        "description": "Create guest profile management and history tracking",
+        "details": "Implement guest profile creation, management, and history tracking. Include contact information and special requests handling.",
+        "testStrategy": "Test guest profile operations, verify history tracking works, and ensure data is properly linked to reservations",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [
+          "5"
+        ],
+        "subtasks": []
+      },
+      {
+        "id": "7",
+        "title": "Basic Frontend Interface",
+        "description": "Create the main user interface for the hotel management system",
+        "details": "Build responsive React frontend with room listing, booking form, and basic admin interface for room management. Prepare UI components for internationalization with proper text extraction and placeholder structure. COMPLETED: Created complete React frontend with TypeScript, Tailwind CSS, Vite, authentication context, language context, API services, responsive layout, navigation, login page, dashboard, and placeholder pages for all modules.",
+        "testStrategy": "Test all UI components, verify responsive design works on different devices, and ensure proper form validation",
+        "status": "done",
+        "priority": "high",
+        "dependencies": [
+          "5"
+        ],
+        "subtasks": []
+      },
+      {
+        "id": "8",
+        "title": "Check-in/Check-out Workflow",
+        "description": "Implement the guest check-in and check-out processes",
+        "details": "Create workflows for guest arrival, room assignment, key issuance, and departure processing with status updates.",
+        "testStrategy": "Test complete check-in/check-out flows, verify room status updates, and ensure proper data tracking",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [
+          "6",
+          "7"
+        ],
+        "subtasks": []
+      },
+      {
+        "id": "9",
+        "title": "Billing and Payment System",
+        "description": "Implement invoice generation and payment processing",
+        "details": "Create invoice generation, payment processing integration, billing history, and receipt generation features.",
+        "testStrategy": "Test invoice creation, payment processing, and verify all billing calculations are accurate",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [
+          "8"
+        ],
+        "subtasks": []
+      },
+      {
+        "id": "10",
+        "title": "Housekeeping Management",
+        "description": "Create housekeeping task management and status tracking",
+        "details": "Implement housekeeping task assignment, status updates, room inspection, and completion reporting.",
+        "testStrategy": "Test task assignment, status updates, and verify proper workflow for housekeeping operations",
+        "status": "pending",
+        "priority": "low",
+        "dependencies": [
+          "8"
+        ],
+        "subtasks": []
+      },
+      {
+        "id": "11",
+        "title": "Email Notification System",
+        "description": "Implement email notifications for bookings and important events",
+        "details": "Create email service integration for booking confirmations, reminders, and system notifications.",
+        "testStrategy": "Test email delivery, verify correct content, and ensure proper error handling for failed emails",
+        "status": "pending",
+        "priority": "low",
+        "dependencies": [
+          "5"
+        ],
+        "subtasks": []
+      },
+      {
+        "id": "12",
+        "title": "Reporting and Analytics",
+        "description": "Create reporting and analytics features for hotel management",
+        "details": "Implement basic reporting for occupancy rates, revenue tracking, and guest statistics.",
+        "testStrategy": "Test report generation, verify data accuracy, and ensure proper filtering and export functionality",
+        "status": "pending",
+        "priority": "low",
+        "dependencies": [
+          "9"
+        ],
+        "subtasks": []
+      },
+      {
+        "id": "13",
+        "title": "Multi-Language Support System",
+        "description": "Implement Spanish and English language support with dynamic switching",
+        "details": "Set up react-i18next for internationalization, create translation files for Spanish and English, implement language preference management, and add dynamic language switching functionality throughout the application.",
+        "testStrategy": "Test language switching, verify all UI elements are translated, ensure user preferences are saved, and test fallback to default language",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [
+          "7"
+        ],
+        "subtasks": []
+      },
+      {
+        "id": "14",
+        "title": "Soft Delete Implementation",
+        "description": "Implement logical deletion across all system entities",
+        "details": "Add soft delete functionality to all database entities (users, rooms, reservations, guests, billing, housekeeping), implement audit trails for data modifications, and create recovery mechanisms for accidentally deleted data.",
+        "testStrategy": "Test soft delete operations, verify data is not physically deleted, test audit trail creation, and ensure recovery functionality works correctly",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [
+          "2"
+        ],
+        "subtasks": []
+      },
+      {
+        "id": "15",
+        "title": "SQL Server Export Module",
+        "description": "Create data export functionality to SQL Server",
+        "details": "Implement SQL Server connectivity using node-mssql, create export configurations for different data types, implement scheduled export functionality, and add export monitoring and logging capabilities.",
+        "testStrategy": "Test SQL Server connection, verify data export accuracy, test scheduled exports, and ensure proper error handling and logging",
+        "status": "pending",
+        "priority": "low",
+        "dependencies": [
+          "12"
+        ],
+        "subtasks": []
+      }
+    ],
+    "metadata": {
+      "version": "1.0",
+      "created": "2024-12-19T10:00:00Z",
+      "lastModified": "2024-12-19T10:00:00Z",
+      "projectName": "Hotel Management System",
+      "description": "A comprehensive hotel management system for small to medium-sized hotels"
+    }
+  }
+}

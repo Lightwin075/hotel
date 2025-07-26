@@ -1,0 +1,219 @@
+<context>
+# Overview  
+A comprehensive hotel management system designed to streamline operations for small to medium-sized hotels. The system will handle room reservations, guest management, billing, and basic hotel operations. It solves the problem of manual hotel management processes by providing a centralized digital platform for staff to manage bookings, guest information, and hotel operations efficiently.
+
+# Core Features  
+## Room Management
+- Room inventory tracking with status (available, occupied, maintenance, cleaning)
+- Room types and pricing management
+- Room assignment and availability calendar
+- Housekeeping status tracking
+
+## Reservation System
+- Online booking interface for guests
+- Reservation management for staff
+- Check-in/check-out processing
+- Booking calendar and availability display
+- Reservation modification and cancellation
+
+## Guest Management
+- Guest profile creation and management
+- Guest history and preferences tracking
+- Contact information management
+- Special requests and notes
+
+## Billing and Payments
+- Invoice generation and management
+- Payment processing and tracking
+- Room rate calculations
+- Additional charges (room service, amenities)
+- Payment history and receipts
+
+## Staff Management
+- Staff login and role-based access
+- Housekeeping task assignment
+- Staff performance tracking
+- Shift management
+
+## Multi-Language Support
+- Spanish and English language support
+- User language preference management
+- Dynamic language switching
+- Translation management system
+- Localized content for all user interfaces
+
+## Data Management and Export
+- Soft delete implementation for all entities
+- Audit trail for data modifications
+- SQL Server export functionality
+- Configurable export schedules
+- Data export monitoring and logging
+
+# User Experience  
+## User Personas
+- Hotel Staff: Front desk, housekeeping, management
+- Guests: Booking rooms, managing reservations
+- Administrators: System configuration and oversight
+
+## Key User Flows
+- Guest booking flow: Search availability → Select room → Enter details → Payment → Confirmation
+- Check-in flow: Guest arrival → Verify booking → Assign room → Issue keys → Update status
+- Check-out flow: Guest departure → Room inspection → Final billing → Payment processing → Room status update
+- Housekeeping flow: Task assignment → Status updates → Room inspection → Completion reporting
+
+## UI/UX Considerations
+- Mobile-responsive design for staff tablets and guest mobile access
+- Intuitive navigation with clear visual hierarchy
+- Real-time updates and notifications
+- Accessibility compliance
+- Multi-language support for international guests (Spanish and English)
+- Language switching functionality with persistent user preferences
+</context>
+<PRD>
+# Technical Architecture  
+## System Components
+- Frontend: React.js web application with responsive design
+- Backend: Node.js/Express.js REST API
+- Database: PostgreSQL for relational data storage
+- Authentication: JWT-based user authentication
+- File Storage: Local file system for documents and images
+- Email Service: SMTP integration for notifications
+
+## Data Models
+- Users (staff, guests, administrators)
+- Rooms (types, status, pricing)
+- Reservations (bookings, check-in/out dates)
+- Guests (profiles, preferences, history)
+- Billing (invoices, payments, charges)
+- Housekeeping (tasks, status, assignments)
+- Language preferences and translations
+- Audit logs for soft delete operations
+- Export configurations and schedules
+
+## APIs and Integrations
+- Payment gateway integration (Stripe/PayPal)
+- Email service integration
+- SMS notifications (optional)
+- Calendar integration for availability
+- Reporting and analytics
+- SQL Server export integration
+- Translation service integration (i18n)
+- Data export scheduling and automation
+
+## Infrastructure Requirements
+- Web server hosting
+- Database server
+- SSL certificate for security
+- Backup and recovery systems
+- Monitoring and logging
+
+# Development Roadmap  
+## Phase 1: Foundation and Core Booking (MVP)
+- Basic user authentication and authorization
+- Room management system (CRUD operations)
+- Simple reservation system
+- Basic guest management
+- Core database schema and API endpoints
+- Basic frontend with room listing and booking form
+
+## Phase 2: Enhanced Booking and Guest Management
+- Advanced reservation features (modification, cancellation)
+- Guest profile management with history
+- Check-in/check-out workflow
+- Room status management
+- Email notifications for bookings
+- Enhanced UI with calendar view
+
+## Phase 3: Billing and Payment System
+- Invoice generation and management
+- Payment processing integration
+- Billing history and reporting
+- Room rate management
+- Additional charges system
+- Payment receipt generation
+
+## Phase 4: Staff Management and Operations
+- Staff user management with roles
+- Housekeeping task management
+- Staff performance tracking
+- Shift management system
+- Internal communication features
+- Mobile-responsive staff interface
+
+## Phase 5: Advanced Features and Optimization
+- Advanced reporting and analytics
+- Multi-language support (Spanish and English)
+- SMS notifications
+- Integration with external services
+- Performance optimization
+- Advanced search and filtering
+- Soft delete implementation across all modules
+- SQL Server export functionality
+- Data export scheduling and automation
+
+# Logical Dependency Chain
+## Foundation First (Phase 1)
+- Database schema and API foundation must be established first
+- User authentication system is required before any user-specific features
+- Room management is the core data that everything else depends on
+- Basic reservation system provides immediate value and validates the core concept
+
+## Quick Win Frontend (Phase 1)
+- Simple booking interface that works end-to-end
+- Room availability display
+- Basic admin interface for room management
+- This creates a usable product quickly for demonstration and testing
+
+## Building Upon Foundation (Phase 2-3)
+- Enhanced booking features build on the basic reservation system
+- Guest management extends the user system
+- Billing system integrates with existing reservations and guests
+- Each phase adds value while maintaining system stability
+
+## Operational Excellence (Phase 4-5)
+- Staff management enhances operational efficiency
+- Advanced features optimize and extend the core functionality
+- Performance and scalability improvements ensure long-term viability
+
+# Risks and Mitigations  
+## Technical Challenges
+- Risk: Complex booking logic and date handling
+- Mitigation: Thorough testing and validation of date calculations, edge case handling
+
+- Risk: Payment integration complexity
+- Mitigation: Use established payment gateways with good documentation and support
+
+- Risk: Real-time updates and synchronization
+- Mitigation: Implement proper state management and WebSocket connections where needed
+
+## MVP Scope Management
+- Risk: Feature creep extending development timeline
+- Mitigation: Strict adherence to MVP requirements, defer non-essential features to later phases
+
+- Risk: Over-engineering the initial system
+- Mitigation: Start with simple, working solutions that can be enhanced later
+
+## Resource Constraints
+- Risk: Limited development resources
+- Mitigation: Prioritize features by business value, use proven technologies and libraries
+
+- Risk: Database performance with growing data
+- Mitigation: Implement proper indexing, query optimization, and consider pagination from the start
+
+# Appendix  
+## Research Findings
+- Most hotel management systems are either too complex for small hotels or too basic for operational needs
+- Mobile-first approach is essential for modern hotel operations
+- Integration with payment systems is critical for guest convenience
+- Real-time availability updates are expected by modern travelers
+
+## Technical Specifications
+- Frontend: React 18+, TypeScript, Tailwind CSS
+- Backend: Node.js 18+, Express.js, TypeScript
+- Database: PostgreSQL 14+ (primary), SQL Server (export destination)
+- Authentication: JWT with refresh tokens
+- Deployment: Docker containers with CI/CD pipeline
+- Testing: Jest for unit tests, Cypress for E2E tests
+- Internationalization: React-i18next for multi-language support
+- Data Export: Node-mssql for SQL Server connectivity
+- Soft Delete: Implemented across all entities with audit trails 
