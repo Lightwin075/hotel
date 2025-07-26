@@ -10,9 +10,8 @@ COPY server/package*.json ./server/
 COPY client/package*.json ./client/
 
 # Install dependencies
-RUN npm install
-RUN cd server && npm install
-RUN cd client && npm install
+RUN chmod +x install.sh
+RUN ./install.sh
 
 # Copy source code
 COPY . .

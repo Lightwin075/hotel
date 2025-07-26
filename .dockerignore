@@ -9,4 +9,6 @@ coverage
 .cache
 .DS_Store
 Thumbs.db
-*.log 
+*.log
+.taskmaster
+.cursor 
